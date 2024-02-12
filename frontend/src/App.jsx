@@ -14,6 +14,7 @@ function App() {
           </nav>
         </header>
         <div className='entries'>
+          <h1>Articles</h1>
           <div className='entry'></div>
         </div>
       </main>
