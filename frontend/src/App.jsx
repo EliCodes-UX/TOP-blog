@@ -24,7 +24,7 @@ function App() {
                 <a className='author'>EliCodes</a>
                 <time>2024</time>
               </p>
-              <p>
+              <p className='summary'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -44,7 +44,7 @@ function App() {
                 <a className='author'>EliCodes</a>
                 <time>2024</time>
               </p>
-              <p>
+              <p className='summary'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -64,7 +64,7 @@ function App() {
                 <a className='author'>EliCodes</a>
                 <time>2024</time>
               </p>
-              <p>
+              <p className='summary'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
