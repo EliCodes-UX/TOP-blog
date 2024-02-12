@@ -13,7 +13,8 @@ header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
-  font-size: 40px;
+  margin-top: 20px;
+  align-items: center;
 }
 header a {
   text-decoration: none;
@@ -21,6 +22,7 @@ header a {
 }
 header a.logo {
   font-weight: bold;
+  font-size: 1.6rem;
 }
 header nav {
   display: flex;
@@ -30,8 +32,9 @@ div.post {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 10px;
+  margin-bottom: 20px;
 }
 div.post div.texts h2 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.9rem;
 }
