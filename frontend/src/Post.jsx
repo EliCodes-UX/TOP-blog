@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { formatISO9075 } from 'date-fns';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +7,7 @@ export default function Post({
   title,
   summary,
   cover,
-  content,
+  // content,
   createdAt,
   author,
 }) {
@@ -14,7 +15,7 @@ export default function Post({
     <div className='post'>
       <div className='image'>
         <Link to={`/post/${_id}`}>
-          <img src={'http://localhost:4000' + cover} alt='' />
+          <img src={'http://localhost:4000' + cover} alt='failed img' />
         </Link>
       </div>
       <div className='texts'>

@@ -93,7 +93,12 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
 });
 
 app.get('/post', async (req, res) => {
-  const posts = await Post.find();
+  res.json(
+    await Post.find()
+      .populate('author', ['username'])
+      .sort({ createdAt: -1 })
+      .limit(20)
+  );
 });
 
 app.listen(4000);
