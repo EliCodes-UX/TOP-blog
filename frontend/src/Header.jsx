@@ -1,10 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Header() {
+  const [username, setUsername] = useState(null);
   useEffect(() => {
     fetch('http://localhost:4000/profile', {
       credentials: 'include',
+    }).then(response => {
+      response.json().then(userInfo => {
+        setUsername(userInfo);
+      });
     });
   }, []);
   return (
@@ -13,8 +18,17 @@ export default function Header() {
         My Blog
       </Link>
       <nav>
-        <Link to={'/login'}>Login</Link>
-        <Link to={'/register'}>Register</Link>
+        {username && (
+          <>
+            <Link to='/create'>Create New Post</Link>
+          </>
+        )}
+        {!username && (
+          <>
+            <Link to={'/login'}>Login</Link>
+            <Link to={'/register'}>Register</Link>
+          </>
+        )}
       </nav>
     </header>
   );

@@ -44,15 +44,34 @@ app.post('/login', async (req, res) => {
   if (passOk) {
     jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
       if (err) throw err;
-      res.cookie('token', token).json('OK');
+      res.cookie('token', token).json({
+        id: userDoc._id,
+        username,
+      });
     });
   } else {
-    res.status(400).json('Wrong Creds');
+    res.status(400).json('wrong credentials');
   }
-  res.json(passOk);
 });
 
+// app.get('/profile', (req, res) => {
+//   const { token } = req.cookies;
+//   jwt.verify(token, secret, {}, (err, info) => {
+//     if (err) throw err;
+//     res.json(info);
+//   });
+// });
 app.get('/profile', (req, res) => {
-  res.json(req.cookies);
+  const token = req.cookies.token; // Extract token from cookies
+  if (!token) {
+    return res.status(401).json({ message: 'Unauthorized: No token provided' });
+  }
+  jwt.verify(token, secret, {}, (err, info) => {
+    if (err) {
+      return res.status(401).json({ message: 'Unauthorized: Invalid token' });
+    }
+    res.json(info);
+  });
 });
+
 app.listen(4000);
