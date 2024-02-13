@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 const app = express();
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const multer = require('multer');
+const uploadMiddleWware = multer({ dist: 'uploads/' });
 
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfg2345sdfsfasdf';
@@ -64,6 +66,10 @@ app.get('/profile', (req, res) => {
 
 app.post('/logout', (req, res) => {
   res.cookie('token', '').json('ok');
+});
+
+app.post('/post', uploadMiddleWware.single(), (req, res) => {
+  res.json(req.files.file);
 });
 
 app.listen(4000);
