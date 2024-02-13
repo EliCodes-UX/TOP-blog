@@ -12,6 +12,7 @@ export default function Header() {
         setUserInfo(userInfo);
       });
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function logout() {
