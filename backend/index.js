@@ -86,10 +86,14 @@ app.post('/post', uploadMiddleware.single('file'), async (req, res) => {
       summary,
       content,
       cover: newPath,
-      // author: info.id,
+      author: info.id,
     });
     res.json(postDoc);
   });
+});
+
+app.get('/post', async (req, res) => {
+  const posts = await Post.find();
 });
 
 app.listen(4000);
