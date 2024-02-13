@@ -23,6 +23,7 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 mongoose.connect(
   'mongodb+srv://elibonner:9BUniBAXbZVEZQuG@cluster0.mgilic4.mongodb.net/?retryWrites=true&w=majority'
@@ -99,6 +100,10 @@ app.get('/post', async (req, res) => {
       .sort({ createdAt: -1 })
       .limit(20)
   );
+});
+
+app.get('/post/:id', async (req, res) => {
+  res.json({});
 });
 
 app.listen(4000);
