@@ -8,10 +8,19 @@ export default function Header() {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
-        setUsername(userInfo);
+        setUsername(userInfo.username);
       });
     });
   }, []);
+
+  function logout() {
+    fetch('http://localhost:4000/logout', {
+      credentials: 'include',
+      method: 'POST',
+    });
+    setUsername(null);
+  }
+
   return (
     <header>
       <Link to={'/'} className='logo'>
@@ -20,7 +29,8 @@ export default function Header() {
       <nav>
         {username && (
           <>
-            <Link to='/create'>Create New Post</Link>
+            <Link to='/create'>New Post</Link>
+            <a onClick={logout}>Logout</a>
           </>
         )}
         {!username && (

@@ -54,24 +54,16 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// app.get('/profile', (req, res) => {
-//   const { token } = req.cookies;
-//   jwt.verify(token, secret, {}, (err, info) => {
-//     if (err) throw err;
-//     res.json(info);
-//   });
-// });
 app.get('/profile', (req, res) => {
-  const token = req.cookies.token; // Extract token from cookies
-  if (!token) {
-    return res.status(401).json({ message: 'Unauthorized: No token provided' });
-  }
+  const { token } = req.cookies;
   jwt.verify(token, secret, {}, (err, info) => {
-    if (err) {
-      return res.status(401).json({ message: 'Unauthorized: Invalid token' });
-    }
+    if (err) throw err;
     res.json(info);
   });
+});
+
+app.post('/logout', (req, res) => {
+  res.cookie('token', '').json('ok');
 });
 
 app.listen(4000);
