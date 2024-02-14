@@ -58,6 +58,7 @@ div.post {
   margin: 5em auto;
   background-color: var(--accent-color);
   padding: 1em;
+  border-radius: 20px;
 }
 div.post div.texts h2 {
   margin: 0;
