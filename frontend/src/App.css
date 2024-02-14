@@ -29,11 +29,14 @@ header {
   color: var(--font-color);
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
   align-items: center;
   padding-left: 1rem;
   padding-right: 1rem;
   border-bottom: 5px solid var(--accent-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 header a {
   text-decoration: none;
@@ -109,12 +112,12 @@ form.login form.register h1 {
 }
 div.post-page {
   display: flex;
-  margin: 0 auto 20px;
+  margin: 5em auto 20px;
   max-width: 800px;
   flex-direction: column;
   border: 0.6rem solid var(--sec-color);
-  background-color: var(--sec-color);
   background-color: #2779a7;
+  border-radius: 15px;
 }
 div.content {
   background-color: var(--accent-color);
