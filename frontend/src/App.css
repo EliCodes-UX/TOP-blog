@@ -1,23 +1,39 @@
+:root {
+  --main-color: #5cdb95;
+  --sec-color: #05386b;
+  --accent-color: #379683;
+  --font-color: #edf5e1;
+}
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body {
+  padding: 0;
   color: #333;
+  background-color: var(--main-color);
 }
 img {
   max-width: 100%;
 }
 main {
   padding: 10px;
-  max-width: 700px;
-  margin: 0 auto;
+  color: var(--font-color);
+  /* max-width: 800px;
+  margin: 0 auto; */
 }
 header {
+  background-color: var(--sec-color);
+  height: 70px;
+  color: var(--font-color);
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
-  margin-top: 20px;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 5px solid var(--accent-color);
 }
 header a {
   text-decoration: none;
@@ -36,6 +52,10 @@ div.post {
   grid-template-columns: 0.9fr 1.1fr;
   gap: 10px;
   margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--accent-color);
+  padding: 1em;
 }
 div.post div.texts h2 {
   margin: 0;
@@ -87,7 +107,20 @@ button {
 form.login form.register h1 {
   text-align: center;
 }
-
+div.post-page {
+  display: flex;
+  margin: 0 auto 20px;
+  max-width: 800px;
+  flex-direction: column;
+  border: 0.6rem solid var(--sec-color);
+  background-color: var(--sec-color);
+  background-color: #2779a7;
+}
+div.content {
+  background-color: var(--accent-color);
+  margin: 10px;
+  padding: 15px;
+}
 form.login h1,
 form.register h1 {
   text-align: center;
