@@ -54,9 +54,8 @@ div.post {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 10px;
-  margin-bottom: 20px;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 5em auto;
   background-color: var(--accent-color);
   padding: 1em;
 }
