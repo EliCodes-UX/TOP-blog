@@ -45,7 +45,7 @@ export default function EditPost() {
   }
 
   return (
-    <form onSubmit={updatePost}>
+    <form onSubmit={updatePost} className='createForm'>
       <input
         type='title'
         placeholder={'Title'}
