@@ -20,8 +20,6 @@ img {
 main {
   padding: 10px;
   color: var(--font-color);
-  /* max-width: 800px;
-  margin: 0 auto; */
 }
 header {
   background-color: var(--sec-color);
@@ -58,7 +56,9 @@ div.post {
   margin: 5em auto;
   background-color: var(--accent-color);
   padding: 1em;
+  border: 0.1em solid var(--sec-color);
   border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 }
 div.post div.texts h2 {
   margin: 0;
@@ -85,10 +85,7 @@ div.entries div.post p.summary {
   margin: 6px 0;
   line-height: 1.6rem;
 }
-form.login form.register {
-  max-width: 400px;
-  margin: 0 auto;
-}
+
 input {
   display: block;
   margin: 5px;
@@ -107,8 +104,28 @@ button {
   border-radius: 5px;
   padding: 7px 0;
 }
+form.login {
+  max-width: 500px;
+  margin: 5em auto;
+  background-color: var(--sec-color);
+  padding: 2em;
+  border: 1em solid var(--accent-color);
+  border-radius: 20%;
+}
+form input {
+  margin-bottom: 2em;
+}
+form.register {
+  max-width: 500px;
+  margin: 5em auto;
+  background-color: var(--sec-color);
+  padding: 2em;
+  border: 1em solid var(--accent-color);
+  border-radius: 20%;
+}
 form.login form.register h1 {
   text-align: center;
+  margin-bottom: 5px;
 }
 div.post-page {
   display: flex;
@@ -120,9 +137,10 @@ div.post-page {
   border-radius: 15px;
 }
 div.content {
-  background-color: var(--accent-color);
+  background-color: var(--sec-color);
   margin: 10px;
   padding: 15px;
+  border-radius: 10%;
 }
 form.login h1,
 form.register h1 {
@@ -159,6 +177,14 @@ div.post-page div.author {
   margin-bottom: 20px;
   font-size: 0.7rem;
   font-weight: bold;
+}
+.createForm {
+  max-width: 500px;
+  margin: 5em auto;
+  background-color: var(--sec-color);
+  padding: 2em;
+  border: 1em solid var(--accent-color);
+  border-radius: 20%;
 }
 div.content p {
   line-height: 1.7rem;
