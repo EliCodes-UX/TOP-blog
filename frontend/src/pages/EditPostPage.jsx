@@ -18,7 +18,7 @@ export default function EditPost() {
         setSummary(postInfo.summary);
       });
     });
-  }, []);
+  }, [id]);
 
   async function updatePost(ev) {
     ev.preventDefault();
