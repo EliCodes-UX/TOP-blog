@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const PORT = process.env.PORT || 4000;
 const User = require('./models/User');
 const Post = require('./models/Post');
 const bcrypt = require('bcryptjs');
@@ -14,7 +15,6 @@ const fs = require('fs');
 
 const salt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET;
-
 app.use(
   cors({
     credentials: true,
@@ -145,4 +145,6 @@ app.get('/post/:id', async (req, res) => {
   res.json(postDoc);
 });
 
-app.listen(4000);
+const server = app.listen(PORT, () => {
+  const address = server.address();
+});
