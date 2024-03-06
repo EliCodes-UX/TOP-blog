@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+require('dotenv').config();
 const User = require('./models/User');
 const Post = require('./models/Post');
 const bcrypt = require('bcryptjs');
@@ -17,7 +18,7 @@ const secret = 'asdfg2345sdfsfasdf';
 app.use(
   cors({
     credentials: true,
-    origin: 'http://localhost:3000',
+    origin: process.env.CLIENT_URL,
     // optionsSuccessStatus: 200,
   })
 );
@@ -25,9 +26,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.connect(
-  'mongodb+srv://elibonner:9BUniBAXbZVEZQuG@cluster0.mgilic4.mongodb.net/?retryWrites=true&w=majority'
-);
+mongoose.connect(process.env.MONGO_URL);
+
+app.post('/test', (res, req) => {
+  res.json('ok');
+});
 
 app.post('/register', async (req, res) => {
   const { username, password } = req.body;
