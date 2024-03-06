@@ -13,7 +13,7 @@ const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
 
 const salt = bcrypt.genSaltSync(10);
-const secret = 'asdfg2345sdfsfasdf';
+const secret = process.env.JWT_SECRET;
 
 app.use(
   cors({
